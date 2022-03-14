@@ -1,5 +1,14 @@
 # Charge Project
 
+A CSMS (charging station management system) such as be.ENERGISED is used to manage charging stations, charging processes
+and customers (so-called eDrivers) amongst other things.
+
+One of the most important functionalities of such a CSMS is to calculate a price to a particular charging process so
+that the eDriver can be invoiced for the consumed services. Establishing a price for a charging process is usually done
+by applying a rate to the CDR (charge detail record) of the corresponding charging process.
+
+This is a microservice developed in python and uses falcon to provide an api that calculate charge prices.
+
 ## Project structure
 
 The application code is in the directory `./charge` and the project entrypoint is the `app` object in `./charge/app.py`
@@ -32,8 +41,7 @@ gunicorn -b 0.0.0.0:8001 charge.app:app
 You can also run flake8 and tests as follows:
 
 ```bash
-flake8 charge
-flake8 tests
+flake8 .
 pytest tests
 ```
 
